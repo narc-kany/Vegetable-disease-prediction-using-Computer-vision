@@ -1,0 +1,71 @@
+notes ML projects
+-----------------
+
+ATLIQ Agriculture
+
+Annotator prepares the data(they build the dataset)
+
+D:/ML/potato_disease/
+pip install --ignore-installed --upgrade tensorflow
+pip install --ignore-installed --upgrade matplotlib
+pip install matplotlib
+
+python -m notebook
+
+Load images
+
+tf.keras.utils.image_dataset_from_directory(
+    directory, labels='inferred', label_mode='int',
+    class_names=None, color_mode='rgb', batch_size=32, image_size=(256,
+    256), shuffle=True, seed=None, validation_split=None, subset=None,
+    interpolation='bilinear', follow_links=False,
+    crop_to_aspect_ratio=False, **kwargs
+)
+
+
+Found 2152 files belonging to 3 classes.
+
+class names
+
+['Potato___Early_blight', 'Potato___Late_blight', 'Potato___healthy']
+
+batch
+
+size =  32
+entire = 68
+
+    for i in range(20):
+        ax = plt.subplot(5, 4, i+1)
+		
+		# 20 = 5*4
+		
+
+80 % => training
+20 % => 10 % validation, 10 % test
+
+train_size = 0.8 which is 80%
+
+slicing after 54 batches arr[54:]
+
+validation 
+val_size = 0.1 which is 10%
+
+testing
+test_size = 0.1 which is 10%
+
+data augmentation
+_________________
+
+rotating
+contrats 
+etc to create new samples
+
+
+tf.keras.layers.Conv2D(
+    filters, kernel_size, strides=(1, 1), padding='valid',
+    data_format=None, dilation_rate=(1, 1), groups=1, activation=None,
+    use_bias=True, kernel_initializer='glorot_uniform',
+    bias_initializer='zeros', kernel_regularizer=None,
+    bias_regularizer=None, activity_regularizer=None, kernel_constraint=None,
+    bias_constraint=None, **kwargs
+)
